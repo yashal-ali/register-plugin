@@ -48,46 +48,46 @@ import { UserModel } from "./models/schemas/UserSchema";
 import { UserRepositoryFactory } from "./repositories/UserRepositoryFactory";
 import { UserVerification } from "./models/classes/UserVerificationClass";
 
-const userRepository = UserRepositoryFactory.createRepository();
+// const userRepository = UserRepositoryFactory.createRepository();
 
-// 🔹 Test Register User
-async function testRegisterUser() {
-  const result = await userRepository.registerUser(
-    "John",
-    "Doe",
-    "deman",
-    "stefan@example.com",
-    "securePassword123",
-    { age: 25, country: "USA" } // extra fields (optional)
-  );
-  console.log("✅ Register User Result:", result);
-}
+// // 🔹 Test Register User
+// async function testRegisterUser() {
+//   const result = await userRepository.registerUser(
+//     "John",
+//     "Doe",
+//     "deman",
+//     "stefan@example.com",
+//     "securePassword123",
+//     { age: 25, country: "USA" } // extra fields (optional)
+//   );
+//   console.log("✅ Register User Result:", result);
+// }
 
-// 🔹 Test Verify User
-async function testVerifyUser() {
-  const result = await userRepository.verifyUser("deman", "123456");
-  console.log("✅ Verify User Result:", result);
-}
+// // 🔹 Test Verify User
+// async function testVerifyUser() {
+//   const result = await userRepository.verifyUser("deman", "123456");
+//   console.log("✅ Verify User Result:", result);
+// }
 
-// 🔹 Test Forgot Password
-async function testForgotPassword() {
-  const result = await userRepository.forgotPassword("stefan@example.com", "https://example.com");
-  console.log("✅ Forgot Password Result:", result);
-}
+// // 🔹 Test Forgot Password
+// async function testForgotPassword() {
+//   const result = await userRepository.forgotPassword("stefan@example.com", "https://example.com");
+//   console.log("✅ Forgot Password Result:", result);
+// }
 
-// 🔹 Test Reset Password
-async function testResetPassword() {
-  const result = await userRepository.resetPassword("sample-reset-token", "newPassword123");
-  console.log("✅ Reset Password Result:", result);
-}
+// // 🔹 Test Reset Password
+// async function testResetPassword() {
+//   const result = await userRepository.resetPassword("sample-reset-token", "newPassword123");
+//   console.log("✅ Reset Password Result:", result);
+// }
 
-// Run tests
-(async () => {
-  await testRegisterUser();
-  await testVerifyUser();
-  await testForgotPassword();
-  await testResetPassword();
-})();
+// // Run tests
+// (async () => {
+//   await testRegisterUser();
+//   await testVerifyUser();
+//   await testForgotPassword();
+//   await testResetPassword();
+// })();
 
 export {
   UserRepositoryFactory,
