@@ -1,7 +1,7 @@
 "use strict";
 // import {  registerUser, verifyUser, resetPassword, forgotPassword } from "./services/authService/authService";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserVerification = exports.UserModel = exports.UserRepositoryFactory = void 0;
+exports.UserVerification = exports.UserModel = exports.connectDB = exports.UserRepositoryFactory = void 0;
 // import { UserModel } from "../src/models/schemas/UserSchema";
 // import { UserVerificationModel } from "./models/schemas/UserVerificationSchema";
 // import mongoose from "mongoose";
@@ -43,6 +43,9 @@ Object.defineProperty(exports, "UserModel", { enumerable: true, get: function ()
 const UserRepositoryFactory_1 = require("./repositories/UserRepositoryFactory");
 const UserVerificationClass_1 = require("./models/classes/UserVerificationClass");
 Object.defineProperty(exports, "UserVerification", { enumerable: true, get: function () { return UserVerificationClass_1.UserVerification; } });
+const database_1 = require("./config/database");
 var UserRepositoryFactory_2 = require("./repositories/UserRepositoryFactory");
 Object.defineProperty(exports, "UserRepositoryFactory", { enumerable: true, get: function () { return UserRepositoryFactory_2.UserRepositoryFactory; } });
-exports.default = { UserRepositoryFactory: UserRepositoryFactory_1.UserRepositoryFactory };
+var database_2 = require("./config/database");
+Object.defineProperty(exports, "connectDB", { enumerable: true, get: function () { return database_2.connectDB; } });
+exports.default = { UserRepositoryFactory: UserRepositoryFactory_1.UserRepositoryFactory, connectDB: database_1.connectDB };
