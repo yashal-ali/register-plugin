@@ -24,5 +24,5 @@ const UserSchema = new Schema<IUser>({
   isVerified: { type: Boolean, default: false },
 });
 
-// Export the typed model
-export const UserModel = mongoose.model<IUser>("User", UserSchema);
+export const UserModel = mongoose.models.User || mongoose.model("User", UserSchema);
+
